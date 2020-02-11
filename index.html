@@ -1,99 +1,145 @@
+
 <!DOCTYPE html>
-<html>
-<head>
-	<title>CSS Animacija</title>
-	<meta charset="utf-8">
+<html lang="en">
 
-	<style>
-body{
-	margin: 0px;
-	padding: 300px;
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	background: #050210;
-}
-.glow_krug{
-position: absolute;
-width: 100px;
-height: 100px;
-border-radius: 50%;
-background : linear-gradient(#fb5dad, #55fb9f, #b97aff);
-animation: animacija 0.5s linear infinite;
-}
-@keyframes animacija {
-	0%{
-		transform: rotate(0deg);
-	}
-	
-	100%{
-		transform: rotate(360deg);
-	}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Grid using Flexbox</title>
+        <style>
+        
+            .container {
+                max-width: 960px;
+                width: 100%;
+                margin: 0 auto;
+                font-family: sans-serif;
+            }
 
-}
-.glow_krug span{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	border-radius: 50%;
-    background : linear-gradient(#fb5dad, #55fb9f, #b97aff);
-}
-.glow_krug span:nth-child(1){
-    filter: blur(20px);
-}
-.glow_krug span:nth-child(2){
-    filter: blur(40px);
-}
-.glow_krug:after{
-	content: '';
-	position: fixed;
-	top: 10px;
-	left: 10px;
-	right: 10px;
-	bottom: 10px;
-	background: #050210;
-	border-radius: 50px;
-}
-.sredina{
-	background: grey;
-	border-radius: 100%;
-	margin: 0px;
-	height: 70px;
-	width: 70px;
-	position: relative;
-	right: 0px;
-	bottom: 0px;
-	top: 13.5px;
-	left: 0px;
 
-	transform: scale(1);
-	animation: sredina 3s infinite;
-}
-@keyframes sredina{
- 0%{
-transform: scale(0.1);
-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
- }
-  30%{
-transform: scale(0.5); 	
-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
- }
-  100%{
- transform: scale(1);	
- box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
- }
-}
-	</style>
+            .row {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-start;
+            }
 
-</head>
-<body>
-<div class="glow_krug">
-	<span></span>
-	<span></span>
-	<span></span>
-	<span></span>
-	
-</div>
-<div class="sredina"></div>
-</body>
+            .column {
+                flex-basis: 20%;
+                box-sizing: border-box;
+                padding: 8px;
+            }
+
+            .box {
+                height: 144px;
+                background-color: #914E67;
+                border-radius: 10px;
+            }
+            .placeholder {
+                height: 115px;
+            	display: flex;
+            	margin-left: auto;
+            	margin-right: auto;
+            }
+            #grid{
+                display: grid;
+                height: 10px;
+                justify-content: center;
+                font-family: sans-serif;
+                color: white;
+                font-size: 20px;
+                transform: translateY(-170%);
+
+            }
+
+            @media screen and (max-width: 1024px) {
+                .column {
+                    flex-basis: 33.33%;
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                .column {
+                    flex-basis: 66%;
+                }
+            }
+
+            @media screen and (max-width: 414px) {
+                .column {
+                    flex-basis: 100%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+    	
+        <div class="container">
+        	<h1>Galery Heading</h1>
+            <div class="row">
+                <div class="column">
+                    <div class="box">
+                    	<img src="placeholder.png" class="placeholder">
+                        <p id="grid" align="center">Image 1</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                    	<img src="placeholder.png" class="placeholder">
+                        <p id="grid" align="center">Image 2</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                    	<img src="placeholder.png" class="placeholder">
+                        <p id="grid" align="center">Image 3</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                    	<img src="placeholder.png" class="placeholder">
+                        <p id="grid" align="center">Image 4</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                    	<img src="placeholder.png" class="placeholder">
+                        <p id="grid" align="center">Image 5</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <img src="placeholder.png" class="placeholder">
+                        <p id="grid" align="center">Image 6</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <img src="placeholder.png" class="placeholder">
+                        <p id="grid" align="center">Image 7</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <img src="placeholder.png" class="placeholder">
+                        <p id="grid" align="center">Image 8</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <img src="placeholder.png" class="placeholder">
+                        <p id="grid" align="center">Image 9</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="box">
+                        <img src="placeholder.png" class="placeholder">
+                        <p id="grid" align="center">Image 10</p>
+                    </div>
+                </div>
+            </div>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </div>
+    
+    </body>
+
 </html>
